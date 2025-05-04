@@ -73,7 +73,7 @@ public class SecurityConfig {
 
         http.authorizeHttpRequests(auth -> auth
                         .requestMatchers("/auth/register").permitAll()
-                        .requestMatchers("/auth/users").hasAuthority("USER")  //Role
+                        .requestMatchers("/auth/users").hasRole("USER")  //Role
                         .anyRequest().authenticated())
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
